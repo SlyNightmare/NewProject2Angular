@@ -1,22 +1,22 @@
 <div>
     <div class="panel-heading">
-        <span class="label label-default label-center">{{title}}</span>
+        <span class="label label-default label-center">Login Page</span>
     </div>
     <div class="panel-body">
-    <img class="image-center" src="{{image}}" />
     <div class="list-group">
-        <div class="list-group-item">
-            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-            <strong>Register</strong> new super heroes.
+        <div class="list-group-item list-group-item-demo">
+               <div class="form-group">
+                <input type = "text" name = "emailid" placeholder = "Enter Email" ngModel>
+                    <input type = "password" name = "passwd" placeholder = "Password" ngModel>
+               </div>
+               <div>
+                   <button class="btn btn-primary btn-center" (click)="registerHero()">Login</button>
+               </div>
+               <div>
+                   {{ clientMessage.message }}
+               </div>
         </div>
-        <div class="list-group-item">
-            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-            <strong>Find</strong> a super hero.
-        </div>
-        <div class="list-group-item">
-            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-            <strong>Fetch</strong> all super heroes.
-        </div>
-    <div class="panel-footer">
     </div>
+</div>
+<div class="panel-footer">
 </div>

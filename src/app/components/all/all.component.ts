@@ -17,7 +17,7 @@ export class AllComponent implements OnInit {
 
     public heroes: Hero[] = [];
 
-    public clientMessage: ClientMessage = new ClientMessage('No heroes to display.');
+    public clientMessage: ClientMessage = new ClientMessage('No Songs to Display.');
 
     constructor(private heroService: HeroService) {}
 

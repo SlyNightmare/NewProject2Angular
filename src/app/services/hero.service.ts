@@ -16,19 +16,19 @@ export class HeroService {
 
   public registerHero(hero: Hero): Observable<ClientMessage> {
     return this.http
-            .post(`${HERO_URL}register`, hero)
+            .post(`${HERO_URL}/register`, hero)
             .catch(this.handleError);
   }
 
   public findHero(hero: Hero): Observable<Hero> {
     return this.http
-            .post(`${HERO_URL}findHero`, hero)
+            .post(`${HERO_URL}/find`, hero)
             .catch(this.handleError);
   }
 
   public findAllHeroes(): Observable<Hero[]> {
     return this.http
-            .get(`${HERO_URL}findAllHeroes`)
+            .get(`${HERO_URL}/all`)
             .catch(this.handleError);
   }
 

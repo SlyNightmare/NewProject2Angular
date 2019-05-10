@@ -1,6 +1,6 @@
 <div>
     <div class="panel-heading">
-        <span class="label label-default label-center">{{title}}</span>
+        <span class="label label-default label-center">Recommend</span>
     </div>
     <div class="panel-body">
     <div class="list-group">
@@ -12,7 +12,7 @@
                <strong>Has Cape?</strong>: {{ (hero.hasCape) ? 'Yes':'No' }}
            </div>
            <div>
-                <button class="btn btn-primary btn-center" (click)="findAllHeroes()">GET</button>
+                <button class="btn btn-primary btn-center" (click)="findAllHeroes()">Press Here</button>
            </div>
            <div *ngIf="heroes && heroes.length == 0">
                {{ clientMessage.message }}

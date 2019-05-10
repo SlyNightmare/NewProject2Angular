@@ -1,6 +1,6 @@
 <div>
     <div class="panel-heading">
-        <span class="label label-default label-center">{{title}}</span>
+        <span class="label label-default label-center">Search Song</span>
     </div>
     <div class="panel-body">
     <div class="list-group">
@@ -9,7 +9,7 @@
                 <input [(ngModel)]="hero.name" placeholder="Name" class="form-control" />
            </div>
            <div>
-               <button class="btn btn-primary btn-center" (click)="findHero()">Find</button>
+               <button class="btn btn-primary btn-center" (click)="findHero()">Search</button>
            </div>
            <div *ngIf="heroData">
                 {{ heroData.superPower }}

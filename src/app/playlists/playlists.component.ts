@@ -1,25 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { PlaylistService } from '../services/playlist.service';
 
 @Component({
-  selector: 'app-playlist',
-  templateUrl: './playlist.component.html',
-  styleUrls: ['./playlist.component.css']
+  selector: 'app-playlists',
+  templateUrl: './playlists.component.html',
+  styleUrls: ['./playlists.component.css']
 })
-export class PlaylistComponent implements OnInit {
+export class PlaylistsComponent implements OnInit {
   playlists:Playlist[] = [];
   constructor(service:PlaylistService) { }
-  
+
   performSearch(name:String){
-    service.searchPlaylists(name).subscribe(
+    service.serachPlaylists(name).subscribe(
       successfulResponseBody=>{
         playlist=successfulResponseBody;
       }
-      error=>{
+      error=> {
         console.log(error);
       }
     )
   }
+
   ngOnInit() {
   }
 

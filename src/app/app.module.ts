@@ -21,6 +21,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 //Services
 import { HeroService } from './services/hero.service';
 import { CustomInterceptor } from './session/custom-interceptor';
+import { PlaylistComponent } from './playlist/playlist.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CustomInterceptor } from './session/custom-interceptor';
     MainComponent,
     RegisterComponent,
     AllComponent,
-    FindComponent
+    FindComponent,
+    PlaylistComponent
   ],
   imports: [
     BrowserModule,

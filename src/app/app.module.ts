@@ -23,6 +23,7 @@ import { PlaylistsComponent } from './playlists/playlists.component';
 import { PlaylistsService } from './services/playlists.service';
 import { TracksComponent } from './tracks/tracks.component';
 import { PlaylistCreateComponent } from './playlist-create/playlist-create.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PlaylistCreateComponent } from './playlist-create/playlist-create.compo
     FindComponent,
     PlaylistsComponent,
     TracksComponent,
-    PlaylistCreateComponent
+    PlaylistCreateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

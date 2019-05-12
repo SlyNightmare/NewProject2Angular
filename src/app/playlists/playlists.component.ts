@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Playlists} from '../models/playlists.model';
-import { PlaylistsService } from './playlists.service';
+import { PlaylistsService } from '../services/playlists.service';
 
 
 @Component({

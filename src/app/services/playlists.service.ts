@@ -15,17 +15,17 @@ export class PlaylistsService{
 
     searchTracks(name:string): Observable<Playlists[]> {
         return this.http
-            .get<Playlists[]>("http://localhost:8088/create")
+            .get<Playlists[]>("${{MUSIC_URL}}/playlists/update")
             .catch(this.handleError);
     }
 
     getAllPlaylists(): Observable<Playlists[]>{
-        return this.http.get<Playlists[]>("${{MUSIC_URL}}playlists")
+        return this.http.get<Playlists[]>("${{MUSIC_URL}}/playlists")
             .catch(this.handleError);
     }
 
     createPlaylist(playlist: Playlists): Observable<any> {
-        return this.http.post<any>("", playlist);
+        return this.http.post<any>("${{MUSIC_URL}}/playlists/create", playlist);
     }
 
 

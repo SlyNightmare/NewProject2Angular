@@ -20,7 +20,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 //Services
 import { PlaylistsComponent } from './playlists/playlists.component';
-import { PlaylistsService } from './playlists/playlists.service';
+import { PlaylistsService } from './services/playlists.service';
 import { TracksComponent } from './tracks/tracks.component';
 import { PlaylistCreateComponent } from './playlist-create/playlist-create.component';
 

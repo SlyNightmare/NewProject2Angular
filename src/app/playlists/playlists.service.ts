@@ -5,7 +5,7 @@ import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import {Playlists} from './playlists'
+import {Playlists} from '../models/playlists.model'
 
 
 @Injectable()

@@ -22,6 +22,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { PlaylistsService } from './playlists/playlists.service';
 import { TracksComponent } from './tracks/tracks.component';
+import { PlaylistCreateComponent } from './playlist-create/playlist-create.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TracksComponent } from './tracks/tracks.component';
     AllComponent,
     FindComponent,
     PlaylistsComponent,
-    TracksComponent
+    TracksComponent,
+    PlaylistCreateComponent
   ],
   imports: [
     BrowserModule,

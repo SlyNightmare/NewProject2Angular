@@ -4,7 +4,11 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api: {
+      playlists: "/playlists",
+      tracks: "/tracks"
+  }
 };
 
 export const MUSIC_URL = `http://localhost:8088/NewProject2`;

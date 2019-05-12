@@ -17,7 +17,7 @@ export class PlaylistsComponent implements OnInit {
   }
 
   performSearch(name:string) {
-    this.service.searchPlaylists(name).subscribe(
+    this.service.searchTracks(name).subscribe(
       successfulResponseBody=>{
         this.playlists=successfulResponseBody;
       },

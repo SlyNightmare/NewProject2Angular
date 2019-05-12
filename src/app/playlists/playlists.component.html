@@ -1,5 +1,83 @@
 <h1>Welcome to Your Playlists</h1>
 
-<p>
-  playlists works!
-</p>
+<div class="rsection">
+  <input [(ngModel)] = "name">
+  <br>
+  <input type="button" value="submit" (click)="performSearch(name)">
+  <br>
+  <br>
+  <br>
+  <table>
+    <thead>
+      <th>Track Name</th>
+      <th>Artist Name</th>
+      <th>Album Name</th>
+    </thead>
+    <tbody>
+      <td>Insert Track Name here</td>
+      <td>Insert Artist Name Here</td>
+      <td>Insert Album Name Here</td>
+    </tbody>
+  </table>
+  <input type="button" value="Add" (click)="someSortofAddFunction()">
+  <input type="button" value="Cancel" (click)="someSortofClearFunction()">
+</div>
+<br>
+  <br>
+  <br>
+<div class="rsection">
+  <h2>Insert Playlist Name Here</h2>
+  <br>
+  <table>
+      <thead>
+          <th>Track Name</th>
+          <th>Artist Name</th>
+          <th>Album Name</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Insert Track Name here</td>
+            <td>Insert Artist Name Here</td>
+            <td>Insert Album Name Here</td>
+        </tr>
+        <tr>
+            <td>Insert Track Name here</td>
+            <td>Insert Artist Name Here</td>
+            <td>Insert Album Name Here</td>
+        </tr>
+        <tr>
+            <td>Insert Track Name here</td>
+            <td>Insert Artist Name Here</td>
+            <td>Insert Album Name Here</td>
+        </tr>
+        </tbody>
+  </table>
+</div>
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<div>
+  <h2>See Your Other Playlists</h2>
+  <table>
+    <thead>
+      <th>Playlist Name</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Playlist1</td>
+      </tr>
+      <tr>
+        <td>Playlist2</td>
+      </tr>
+      <tr>
+        <td>Playlist3</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

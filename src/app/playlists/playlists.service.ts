@@ -15,7 +15,7 @@ export class PlaylistsService{
 
     searchTracks(name:string): Observable<Playlists[]> {
         return this.http
-            .get<Playlists[]>("http://localhost:8088/playlists/${name}")
+            .get<Playlists[]>("http://localhost:8088/create")
             .catch(this.handleError);
     }
 

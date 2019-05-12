@@ -9,9 +9,10 @@ import { PlaylistsService } from './playlists.service';
   styleUrls: ['./playlists.component.css']
 })
 export class PlaylistsComponent implements OnInit {
-    playlists:Playlists[] = [];
-    service:PlaylistsService;
-    constructor(service:PlaylistsService) {}
+    
+    playlists:Playlists[];
+    
+    constructor(private service:PlaylistsService) {}
 
   ngOnInit() {
   }
@@ -27,8 +28,13 @@ export class PlaylistsComponent implements OnInit {
     )
   }
 
-  searchForPlaylist() {
-    
+  searchForPlaylist(): void{
+    this.service.getAllPlaylists().subscribe((playlistData) => {
+      this.playlists = playlistData
+      console.log(playlistData)
+    }, (error) =>{
+      console.log(error);
+    });
   }
 
 }

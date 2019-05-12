@@ -21,6 +21,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 //Services
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { PlaylistsService } from './playlists/playlists.service';
+import { TracksComponent } from './tracks/tracks.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PlaylistsService } from './playlists/playlists.service';
     RegisterComponent,
     AllComponent,
     FindComponent,
-    PlaylistsComponent
+    PlaylistsComponent,
+    TracksComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 <h1>Welcome to Your Playlists</h1>
 
+<h2>Search for a Song</h2>
 <div class="rsection">
   <input [(ngModel)] = "name">
   <br>
@@ -7,6 +8,7 @@
   <br>
   <br>
   <br>
+  <h2>Add the song to your Playlist</h2>
   <table>
     <thead>
       <th>Track Name</th>
@@ -25,8 +27,9 @@
 <br>
   <br>
   <br>
+<h2>Playlist Songs</h2>
 <div class="rsection">
-  <h2>Insert Playlist Name Here</h2>
+  <h2>{{playlist.name}}</h2>
   <br>
   <table>
       <thead>

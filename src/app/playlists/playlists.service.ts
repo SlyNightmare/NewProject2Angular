@@ -20,7 +20,7 @@ export class PlaylistsService{
     }
 
     getAllPlaylists(): Observable<Playlists[]>{
-        return this.http.get<Playlists[]>("http://localhost:8088/playlists")
+        return this.http.get<Playlists[]>("${{MUSIC_URL}}playlists")
             .catch(this.handleError);
     }
 

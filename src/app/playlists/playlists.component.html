@@ -13,10 +13,10 @@
       <th>Artist Name</th>
       <th>Album Name</th>
     </thead>
-    <tbody>
-      <td>Insert Track Name here</td>
-      <td>Insert Artist Name Here</td>
-      <td>Insert Album Name Here</td>
+    <tbody *ngFor = "let track of tracks">
+      <td>{{track.name}}</td>
+      <td>{{track.artist}}</td>
+      <td>{{track.Album}}</td>
     </tbody>
   </table>
   <input type="button" value="Add" (click)="someSortofAddFunction()">
@@ -35,21 +35,11 @@
           <th>Album Name</th>
         </thead>
         <tbody>
-          <tr>
-            <td>Insert Track Name here</td>
-            <td>Insert Artist Name Here</td>
-            <td>Insert Album Name Here</td>
-        </tr>
-        <tr>
-            <td>Insert Track Name here</td>
-            <td>Insert Artist Name Here</td>
-            <td>Insert Album Name Here</td>
-        </tr>
-        <tr>
-            <td>Insert Track Name here</td>
-            <td>Insert Artist Name Here</td>
-            <td>Insert Album Name Here</td>
-        </tr>
+          <tr *ngFor = "let track of tracks">
+            <td>{{track.name}}</td>
+            <td>{{track.artist}}</td>
+            <td>{{track.Album}}</td>
+          </tr>
         </tbody>
   </table>
 </div>
@@ -66,14 +56,8 @@
       <th>Playlist Name</th>
     </thead>
     <tbody>
-      <tr>
-        <td>Playlist1</td>
-      </tr>
-      <tr>
-        <td>Playlist2</td>
-      </tr>
-      <tr>
-        <td>Playlist3</td>
+      <tr *ngFor = "let playlist of playlists">
+        <td>{{playlist.name}}</td>
       </tr>
     </tbody>
   </table>

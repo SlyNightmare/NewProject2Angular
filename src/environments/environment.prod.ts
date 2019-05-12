@@ -2,4 +2,4 @@ export const environment = {
   production: true
 };
 
-export const MUSICL = `http://localhost:8087/GroupNewProject2/`;
+export const MUSIC_URL = `http://localhost:8088/NewProject2`;

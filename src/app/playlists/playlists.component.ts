@@ -27,4 +27,8 @@ export class PlaylistsComponent implements OnInit {
     )
   }
 
+  searchForPlaylist() {
+    
+  }
+
 }

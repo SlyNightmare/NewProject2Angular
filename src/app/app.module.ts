@@ -19,9 +19,8 @@ import { FindComponent } from './components/find/find.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 //Services
-import { HeroService } from './services/hero.service';
-import { CustomInterceptor } from './session/custom-interceptor';
 import { PlaylistsComponent } from './playlists/playlists.component';
+import { PlaylistsService } from './playlists/playlists.service';
 
 @NgModule({
   declarations: [
@@ -39,11 +38,7 @@ import { PlaylistsComponent } from './playlists/playlists.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [HeroService, {
-    provide: HTTP_INTERCEPTORS,
-    useClass: CustomInterceptor,
-    multi: true
-  }],
+  providers: [PlaylistsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

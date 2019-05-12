@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Playlists} from './playlists';
+import { PlaylistsService } from './playlists.service';
 
 
 @Component({
@@ -8,9 +9,22 @@ import {Playlists} from './playlists';
   styleUrls: ['./playlists.component.css']
 })
 export class PlaylistsComponent implements OnInit {
-  
+    playlists:Playlists[] = [];
+    service:PlaylistsService;
+    constructor(service:PlaylistsService) {}
 
   ngOnInit() {
+  }
+
+  performSearch(name:string) {
+    this.service.searchPlaylists(name).subscribe(
+      successfulResponseBody=>{
+        this.playlists=successfulResponseBody;
+      },
+      error=>{
+        console.log(error);
+      }
+    )
   }
 
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Playlists} from '../models/playlists.model';
 import { PlaylistsService } from '../services/playlists.service';
-
+import { Tracks } from '../models/tracks.model';
+import { TracksService } from '../services/tracks.service';
 
 @Component({
   selector: 'app-playlists',
@@ -11,14 +12,19 @@ import { PlaylistsService } from '../services/playlists.service';
 export class PlaylistsComponent implements OnInit {
     
     playlists:Playlists[];
+    track: Tracks = {
+      name: '',
+      artist: '',
+      album: ''
+    }
     
-    constructor(private service:PlaylistsService) {}
+    constructor(private playlistService:PlaylistsService, private trackService: TracksService) {}
 
   ngOnInit() {
   }
 
   performSearch(name:string) {
-    this.service.searchTracks(name).subscribe(
+    this.playlistService.searchTracks(name).subscribe(
       successfulResponseBody=>{
         this.playlists=successfulResponseBody;
       },
@@ -28,8 +34,8 @@ export class PlaylistsComponent implements OnInit {
     )
   }
 
-  searchForPlaylist(): void{
-    this.service.getAllPlaylists().subscribe((playlistData) => {
+  searchForTrack(): void{
+    this.playlistService.getAllPlaylists().subscribe((playlistData) => {
       this.playlists = playlistData
       console.log(playlistData)
     }, (error) =>{

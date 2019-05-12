@@ -1,3 +1,12 @@
-<p>
-  playlist-create works!
-</p>
+<app-navbar></app-navbar>
+<div>
+  <form novalidate (ngSubmit)="createPlaylist()">
+    <h2>Create Playlist</h2>
+    <div class = "form-group">
+      <input type="text" name="Playlist" class="form-control" [(ngModel)]="playlist.name">
+    </div>
+    <div>
+      <input type="submit" class="btn" value="Create Playlist">
+    </div>
+  </form>
+</div>

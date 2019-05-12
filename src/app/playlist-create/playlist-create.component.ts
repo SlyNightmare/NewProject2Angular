@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Playlists } from '../models/playlists.model';
+import { PlaylistsService } from '../playlists/playlists.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-playlist-create',
@@ -11,9 +13,17 @@ export class PlaylistCreateComponent implements OnInit {
   playlist: Playlists = {
     name: ""
   }
-  constructor() {}
+  constructor(private playlistService: PlaylistsService, private router: Router) {}
 
   ngOnInit() {
+  }
+
+  createPlaylist(){
+    this.playlistService.createPlaylist(this.playlist).subscribe(
+      success => {
+        this.router.navigate(["/someendpoint"]);
+      }
+    )
   }
 
 }

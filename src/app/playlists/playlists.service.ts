@@ -24,6 +24,10 @@ export class PlaylistsService{
             .catch(this.handleError);
     }
 
+    createPlaylist(playlist: Playlists): Observable<any> {
+        return this.http.post<any>("", playlist);
+    }
+
 
     private handleError(error: Response){
         return Observable.throw(error.statusText);

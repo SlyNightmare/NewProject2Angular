@@ -11,12 +11,8 @@ import { Tracks } from '../../models/tracks.model';
 export class PlaylistsComponent implements OnInit {
     
     playlists:Playlists[];
-    track: Tracks = {
-      name: '',
-      artist: '',
-      album: ''
-    }
-    
+    tracks: Tracks[];
+
     constructor(private playlistService:PlaylistsService) {}
 
   ngOnInit() {
@@ -24,8 +20,8 @@ export class PlaylistsComponent implements OnInit {
 
   performSearch(name:string) {
     this.playlistService.searchTracks(name).subscribe(
-      successfulResponseBody=>{
-        this.playlists=successfulResponseBody;
+      data =>{
+        this.tracks = data;
       },
       error=>{
         console.log(error);

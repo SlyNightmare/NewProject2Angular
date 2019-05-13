@@ -7,6 +7,7 @@ import 'rxjs/add/operator/catch';
 
 import {Playlists} from '../models/playlists.model'
 import { MUSIC_URL } from "../../environments/environment";
+import { Tracks } from "../models/tracks.model";
 
 
 @Injectable()
@@ -14,19 +15,19 @@ export class PlaylistsService{
     
     constructor(private http: HttpClient) {}
 
-    searchTracks(name:string): Observable<Playlists[]> {
+    searchTracks(name:string): Observable<Tracks[]> {
         return this.http
-            .get<Playlists[]>(`${MUSIC_URL}/playlists/update`)
+            .get<Tracks[]>(`${MUSIC_URL}/music/getsong/${name}`)
             .catch(this.handleError);
     }
 
     getAllPlaylists(): Observable<Playlists[]>{
-        return this.http.get<Playlists[]>(`${MUSIC_URL}/playlists`)
+        return this.http.get<Playlists[]>(`${MUSIC_URL}/music/playlists`)
             .catch(this.handleError);
     }
 
     createPlaylist(playlist: Playlists): Observable<any> {
-        return this.http.post<any>(`${MUSIC_URL}/playlists/create`, playlist);
+        return this.http.post<any>(`${MUSIC_URL}/music/playlists/create`, playlist);
     }
 
 

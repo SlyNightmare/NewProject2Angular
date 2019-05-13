@@ -16,9 +16,9 @@
       <th>Album Name</th>
     </thead>
     <tbody *ngFor = "let track of tracks">
-      <td>{{track.name}}</td>
-      <td>{{track.artist}}</td>
-      <td>{{track.Album}}</td>
+      <td><a [href]= "track.externalURL">{{track.trackName}}</a></td>
+      <td>{{track.artistName}}</td>
+      <td>{{track.albumName}}</td>
     </tbody>
   </table>
   <input type="button" value="Add" (click)="someSortofAddFunction()">

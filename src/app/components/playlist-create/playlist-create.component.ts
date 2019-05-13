@@ -10,9 +10,8 @@ import { Router } from '@angular/router';
 })
 export class PlaylistCreateComponent implements OnInit {
 
-  playlist: Playlists = {
-    name: ""
-  }
+  playlist: Playlists;
+  
   constructor(private playlistService: PlaylistsService, private router: Router) {}
 
   ngOnInit() {

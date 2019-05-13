@@ -16,12 +16,12 @@ import { NavComponent } from './components/nav/nav.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 //Services
-import { PlaylistsComponent } from './playlists/playlists.component';
+import { PlaylistsComponent } from './components/playlists/playlists.component';
 import { PlaylistsService } from './services/playlists.service';
-import { TracksComponent } from './tracks/tracks.component';
-import { PlaylistCreateComponent } from './playlist-create/playlist-create.component';
-import { LoginComponent } from './login/login.component';
-import { MainComponent } from './main/main.component';
+import { PlaylistCreateComponent } from './components/playlist-create/playlist-create.component';
+import { LoginComponent } from './components/login/login.component';
+import { MainComponent } from './components/main/main.component';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,6 @@ import { MainComponent } from './main/main.component';
     NavComponent,
     MainComponent,
     PlaylistsComponent,
-    TracksComponent,
     PlaylistCreateComponent,
     LoginComponent
   ],
@@ -39,7 +38,8 @@ import { MainComponent } from './main/main.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [PlaylistsService],
+  providers: [PlaylistsService,
+  LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

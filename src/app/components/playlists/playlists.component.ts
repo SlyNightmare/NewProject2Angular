@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Playlists} from '../models/playlists.model';
-import { PlaylistsService } from '../services/playlists.service';
-import { Tracks } from '../models/tracks.model';
-import { TracksService } from '../services/tracks.service';
+import {Playlists} from '../../models/playlists.model';
+import { PlaylistsService } from '../../services/playlists.service';
+import { Tracks } from '../../models/tracks.model';
 
 @Component({
   selector: 'app-playlists',
@@ -18,7 +17,7 @@ export class PlaylistsComponent implements OnInit {
       album: ''
     }
     
-    constructor(private playlistService:PlaylistsService, private trackService: TracksService) {}
+    constructor(private playlistService:PlaylistsService) {}
 
   ngOnInit() {
   }

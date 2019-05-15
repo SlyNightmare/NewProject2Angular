@@ -8,7 +8,7 @@ export class LoginService {
 
     constructor(private http:HttpClient) {}
 
-    public login(username:String, password:String): Observable<Account> {
+    public login(username:string, password:String): Observable<Account> {
         return this.http.post(`${MUSIC_URL}/account/login`, [username, password]).catch(this.handleError);
     }
 

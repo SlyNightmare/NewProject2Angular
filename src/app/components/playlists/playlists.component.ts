@@ -8,20 +8,23 @@ import { Tracks } from '../../models/tracks.model';
   templateUrl: './playlists.component.html',
   styleUrls: ['./playlists.component.css']
 })
-export class PlaylistsComponent implements OnInit {
+export class PlaylistsComponent {
     
     playlists:Playlists[];
-    tracks: Tracks[];
+    track: Tracks[];
+    public tracks: Tracks = new Tracks(0, '', '', '', '', 0);
+    public trackData: Tracks = new Tracks(0, '', '', '', '', 0);
 
     constructor(private playlistService:PlaylistsService) {}
 
-  ngOnInit() {
-  }
+    
+
+  
 
   performSearch(name:string) {
     this.playlistService.searchTracks(name).subscribe(
       data =>{
-        this.tracks = data;
+        this.track = data;
       },
       error=>{
         console.log(error);
@@ -36,6 +39,17 @@ export class PlaylistsComponent implements OnInit {
     }, (error) =>{
       console.log(error);
     });
+  }
+
+
+  public findTracks(): void{
+    this.playlistService.findTracks(this.tracks).subscribe(
+      data => this.trackData = data,
+      error => {
+        this.trackData = null;
+
+      }
+    );
   }
 
 }

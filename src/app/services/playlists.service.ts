@@ -20,6 +20,10 @@ export class PlaylistsService{
             .get<Tracks[]>(`${MUSIC_URL}/music/getsong/${name}`)
             .catch(this.handleError);
     }
+    
+    findTracks(track: Tracks): Observable<Tracks> {
+        return this.http.post(`{MUSIC_URL}/find`, track).catch(this.handleError);
+    }
 
     getAllPlaylists(): Observable<Playlists[]>{
         return this.http.get<Playlists[]>(`${MUSIC_URL}/music/playlists`)

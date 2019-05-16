@@ -1,0 +1,73 @@
+<button class="btn btn-danger btn-center"(click)= "logout()" routerLink="/logout">Logout</button>
+<h1>Welcome to Your Playlists</h1>
+
+<h2>Search for a Song</h2>
+<div class="rsection">
+  <input [(ngModel)] = "name">
+  <br>
+  <input type="button" value="submit" (click)="performSearch(name)">
+  <br>
+  <br>
+  <br>
+  <h2>Add the song to your Playlist</h2>
+  <table>
+    <thead>
+      <th>Track Name</th>
+      <th>Artist Name</th>
+      <th>Album Name</th>
+    </thead>
+    <tbody *ngFor = "let track of tracks">
+      <td>{{track.name}}</td>
+      <td>{{track.artist}}</td>
+      <td>{{track.Album}}</td>
+    </tbody>
+  </table>
+  <input type="button" value="Add" (click)="someSortofAddFunction()">
+  <input type="button" value="Cancel" (click)="someSortofClearFunction()">
+</div>
+<br>
+  <br>
+  <br>
+<h2>Playlist Songs</h2>
+<div class="rsection">
+  <h2>{{playlist.name}}</h2>
+  <br>
+  <table>
+      <thead>
+          <th>Track Name</th>
+          <th>Artist Name</th>
+          <th>Album Name</th>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let track of tracks">
+            <td>{{track.name}}</td>
+            <td>{{track.artist}}</td>
+            <td>{{track.Album}}</td>
+          </tr>
+        </tbody>
+  </table>
+</div>
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<div>
+  <h2>See Your Other Playlists</h2>
+  <table>
+    <thead>
+      <th>Playlist Name</th>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let playlist of playlists">
+        <td>{{playlist.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+

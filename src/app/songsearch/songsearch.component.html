@@ -1,0 +1,23 @@
+
+ <h1>Search For the Song You Would Like To Hear</h1>
+
+<h2>Search for a Song</h2>
+<div class="rsection">
+  <input [(ngModel)] = "name">
+  <br>
+  <input type="button" value="Submit" (click)="performSearch(name)"> </div>
+
+  <br>
+  <br>
+  <br>
+
+  <h2>Recommended Song</h2>
+<div class="rsection">
+  <input [(ngModel)] = "name">
+  <br>
+  <input type="button" value="Recommended Song" (click)="performSearch(name)">
+
+
+  <button class="btn btn-danger btn-center"(click)= "logout()" routerLink="/logout">Logout</button>
+  </div>
+

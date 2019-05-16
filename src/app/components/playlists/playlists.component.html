@@ -15,7 +15,7 @@
       <th>Artist Name</th>
       <th>Album Name</th>
     </thead>
-    <tbody *ngFor = "let track of tracks">
+    <tbody *ngFor = "">
       <td><a [href]= "track.externalURL">{{track.trackName}}</a></td>
       <td>{{track.artistName}}</td>
       <td>{{track.albumName}}</td>
@@ -54,16 +54,13 @@
   <br>
 <div>
   <h2>See Your Other Playlists</h2>
-  <table>
-    <thead>
-      <th>Playlist Name</th>
-    </thead>
-    <tbody>
-      <tr *ngFor = "let playlist of playlists">
-        <td>{{playlist.name}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="container">
+    <div *ngFor = "let playlist of playlists">
+      <div class = "d-flex flex-row justify-content-between">
+        <h3>{{playlist.name}}</h3>
+      </div>
+    </div>
+  </div>
 </div>
 
 

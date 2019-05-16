@@ -25,8 +25,8 @@ export class PlaylistsService{
         return this.http.post(`{MUSIC_URL}/find`, track).catch(this.handleError);
     }
 
-    getAllPlaylists(): Observable<Playlists[]>{
-        return this.http.get<Playlists[]>(`${MUSIC_URL}/music/playlists`)
+    getAllPlaylists(accountId:number): Observable<Playlists[]>{
+        return this.http.get<Playlists[]>(`${MUSIC_URL}/music/playlists?${accountId}`)
             .catch(this.handleError);
     }
 

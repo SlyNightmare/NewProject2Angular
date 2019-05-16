@@ -8,9 +8,9 @@ import { Tracks } from '../../models/tracks.model';
   templateUrl: './playlists.component.html',
   styleUrls: ['./playlists.component.css']
 })
-export class PlaylistsComponent {
+export class PlaylistsComponent implements OnInit {
     
-    playlists:Playlists[];
+    playlists:Playlists[] = [];
     track: Tracks[];
     public tracks: Tracks = new Tracks(0, '', '', '', '', 0);
     public trackData: Tracks = new Tracks(0, '', '', '', '', 0);
@@ -18,6 +18,11 @@ export class PlaylistsComponent {
     constructor(private playlistService:PlaylistsService) {}
 
     
+    ngOnInit() {
+      this.playlistService.getAllPlaylists().subscribe(
+        success => this.playlists = success
+      )
+    }
 
   
 
@@ -29,8 +34,10 @@ export class PlaylistsComponent {
       error=>{
         console.log(error);
       }
-    )
+    );
   }
+
+
 
   searchForTrack(): void{
     this.playlistService.getAllPlaylists().subscribe((playlistData) => {
@@ -44,7 +51,7 @@ export class PlaylistsComponent {
 
   public findTracks(): void{
     this.playlistService.findTracks(this.tracks).subscribe(
-      data => this.trackData = data,
+      data => this.trackData = data, 
       error => {
         this.trackData = null;
 

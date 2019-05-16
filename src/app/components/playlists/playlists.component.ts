@@ -14,12 +14,14 @@ export class PlaylistsComponent implements OnInit {
     track: Tracks[];
     public tracks: Tracks = new Tracks(0, '', '', '', '', 0);
     public trackData: Tracks = new Tracks(0, '', '', '', '', 0);
+    public playlistData: Playlists = new Playlists(0, '', 0);
+
 
     constructor(private playlistService:PlaylistsService) {}
 
     
     ngOnInit() {
-      this.playlistService.getAllPlaylists().subscribe(
+      this.playlistService.getAllPlaylists(this.playlistData.accountId).subscribe(
         success => this.playlists = success
       )
     }
@@ -39,8 +41,8 @@ export class PlaylistsComponent implements OnInit {
 
 
 
-  searchForTrack(): void{
-    this.playlistService.getAllPlaylists().subscribe((playlistData) => {
+  getAllPlaylists(accountId:number): void{
+    this.playlistService.getAllPlaylists(accountId).subscribe((playlistData) => {
       this.playlists = playlistData
       console.log(playlistData)
     }, (error) =>{
